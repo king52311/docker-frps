@@ -1,0 +1,13 @@
+services:
+  frps:
+    image: fatedier/frps:v0.61.0  # 建议指定具体版本，与客户端大版本保持一致
+    container_name: frps-server
+    restart: always
+    network_mode: "host"           # 📢 服务端强烈推荐使用 host 模式！
+    volumes:
+      - ./frps.toml:/etc/frp/frps.toml:ro  # 将配置文件挂载进容器，ro 表示只读
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"            # 限制日志大小，防止撑爆磁盘
+        max-file: "3"

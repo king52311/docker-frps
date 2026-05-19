@@ -1,0 +1,12 @@
+# 服务端监听端口，用于接收 frpc 的连接
+bindPort = 7070
+
+# 鉴权配置（frpc 客户端连接时必须提供相同的 token）
+auth.method = "token"
+auth.token = "2f%vXPfy3*IWzX"  # 强烈建议使用复杂的字符串
+
+# 可选：frps 的 Web 管理控制台（用于在网页上查看穿透状态）
+webServer.addr = "0.0.0.0"
+webServer.port = 7575
+webServer.user = "admin"
+webServer.password = "1234rewq"
