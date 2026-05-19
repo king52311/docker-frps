@@ -6,6 +6,7 @@ services:
     network_mode: "host"           # 📢 服务端强烈推荐使用 host 模式！
     volumes:
       - ./frps.toml:/etc/frp/frps.toml:ro  # 将配置文件挂载进容器，ro 表示只读
+    command: ["-c", "/etc/frp/frps.toml"]
     logging:
       driver: "json-file"
       options:
